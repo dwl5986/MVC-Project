@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+  head
+    title Signup Page
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    link(rel='stylesheet', type='text/css', href='/assets/styles.css')
+  body
+    h1 Welcome to the Sign Up Page
+    // links or URLs are always GET resources as they are getting (retrieving) a resource
+    a(href='/') Home  |
+    a(href='/page1')   Game Page  |
+    a(href='/scorePage')   High Scores  |
+    a(href='/logout')   Log Out
+    
+    div.divSpacer
+    section#signup
+    p#errorMessage.hidden
+    form#signupForm(class='loginSignupForm', name='signupForm', action='/signup', method='POST')
+      label(for='username') Username: 
+      input#user(type='text', name='username', placeholder='username')
+      label(for='pass') Password: 
+      input#pass(type='password', name='pass', placeholder='password')
+      label(for='pass2') Password: 
+      input#pass2(type='password', name='pass2', placeholder='retype password')
+      input(type='hidden', name='_csrf', value='#{csrfToken}')
+      a#signupSubmit(class='formSubmit', href='#') Sign up
+block scripts
+    script(src='/assets/client.js')

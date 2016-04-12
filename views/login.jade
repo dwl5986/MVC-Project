@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  head
+    title Login Page
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+    link(rel="stylesheet", type="text/css", href="/assets/styles.css")
+  body
+    h1 Welcome to the Login Page
+    // links or URLs are always GET resources as they are getting (retrieving) a resource
+    a(href='/') Home  |
+    a(href='/page1')   Game Page  |
+    a(href='/scorePage')   High Scores  |
+    a(href='/logout')   Log Out
+    
+    div.divSpacer
+    section#login
+    p#errorMessage.hidden
+    form#loginForm(class='loginSignupForm', name='loginForm', action='/login', method='POST')
+      label(for='username') Username: 
+      input#user(type='text', name='username', placeholder='username')
+      label(for='pass') Password: 
+      input#pass(type='password', name='pass', placeholder='password')
+      input(type='hidden', name='_csrf', value='#{csrfToken}')
+      a#loginSubmit(class='formSubmit', href='#') Sign in
+    p
+      | Don't have an account? 
+      a(href='/signup') Sign up
+block scripts
+    script(src='/assets/client.js')

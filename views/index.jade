@@ -1,0 +1,14 @@
+doctype html
+html(lang='en')
+  head
+    title #{title}
+  body
+    h1 Welcome to the #{pageName}
+    // links or URLs are always GET resources as they are getting (retrieving) a resource
+    a(href='/') Home  |
+    a(href='/page1')   Game Page  |
+    a(href='/scorePage')   High Scores  |
+    a(href='/logout')   Log Out
+    div.divSpacer
+    h3 MVC Project Documentation
+    p This will be an explanation of this project, including its scope with my final project.

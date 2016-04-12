@@ -1,0 +1,12 @@
+.divSpacer {
+  height: 10px;
+}
+.loginSignupForm {
+  width: 220px;
+}
+.hidden {
+  visibility: hidden;
+}
+.show {
+  visibility: visible;
+}

@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+  head
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+    link(rel="stylesheet", type="text/css", href="/assets/styles.css")
+  body
+    h1 High Scores
+    // links or URLs are always GET resources as they are getting (retrieving) a resource
+    a(href='/') Home  |
+    a(href='/page1')   Game Page  |
+    a(href='/scorePage')   High Scores  |
+    a(href='/logout')   Log Out
+    div.divSpacer
+    section#highscore
+    p#errorMessage.hidden
+    form#scoreForm(class='loginSignupForm', name='scoreForm', action='/scorePage', method='POST')
+      label(for='name') User Name: 
+      input#user(type='text', name='username', placeholder='name')
+      label(for='pass') High Score: 
+      input#score(type='number', name='score', placeholder='score')
+      a#scoreSubmit(href='#') Sign in
+    div.divSpacer
+    section#scores
+    if !scores || scores.length == 0
+      div
+        h3 No High Scores Yet
+    else
+      each val in scores
+        div
+          span Name: #{val.name}
+          span HighScore: #{val.score}
+block scripts
+  script(src='/assets/client.js')
