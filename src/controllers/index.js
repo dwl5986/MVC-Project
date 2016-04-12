@@ -93,11 +93,10 @@ var scorePage = function(req, res) {
 };
 
 var makeScore = function(req, res) {
-  if(!req.body.name || !req.body.score) {
-    return res.status(400).json({error: 'Both name and age are required'});
-  }
-
   console.log('making new score');
+  if(!req.body.name || !req.body.score) {
+    return res.status(400).json({error: 'Both name and score are required'});
+  }
 
   var scoreData = {
     name: req.body.name,
