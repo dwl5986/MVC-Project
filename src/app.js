@@ -14,7 +14,7 @@ var csrf = require('csurf');
 var router = require('./router.js');
 
 // Database URL
-var dbURL = process.env.MONGOLAB_URI || "mongodb://localhost/simpleMVCExample";
+var dbURL = process.env.MONGODB_URI || "mongodb://localhost/mvcMiniProject";
 
 // Connect to Database
 var db = mongoose.connect(dbURL, function(err) {
