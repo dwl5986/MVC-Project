@@ -8,6 +8,7 @@ var bodyParser = require('body-parser'); //library to handle POST requests any i
 var mongoose = require('mongoose'); //Mongoose is one of the most popular MongoDB libraries for node
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
+var url = require('url');
 var csrf = require('csurf');
 
 // Import Router
