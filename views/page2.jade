@@ -4,11 +4,11 @@ html(lang='en')
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
     link(rel="stylesheet", type="text/css", href="/assets/styles.css")
   body
-    h1 High Scores
+    h1 Your Scores
     // links or URLs are always GET resources as they are getting (retrieving) a resource
     a(href='/') Home  |
     a(href='/page1')   Game Page  |
-    a(href='/scorePage')   High Scores  |
+    a(href='/scorePage')   Scores  |
     a(href='/logout')   Log Out
     div.divSpacer
     section#highscore
@@ -16,8 +16,9 @@ html(lang='en')
     form#scoreForm(class='loginSignupForm', name='scoreInfo', action='/scorePage', method='POST')
       label(for='name') User Name: 
       input#user(type='text', name='name', placeholder='name')
-      label(for='score') High Score: 
+      label(for='score') User Score: 
       input#score(type='number', name='score', placeholder='score')
+      input(type="hidden", name="_csrf", value="#{csrfToken}")
       a#scoreSubmit(href='#') Submit Score
     div.divSpacer
     section#scores
@@ -25,9 +26,11 @@ html(lang='en')
       div
         h3 No High Scores Yet
     else
-      each val in scores
-        div
-          span Name: #{val.name}
-          span HighScore: #{val.score}
+      h3 Scores
+      div.scoreHolder
+        each val in scores
+          div.showHS
+            span Name: #{val.name}
+            span Score: #{val.score}
 block scripts
   script(src='/assets/client.js')

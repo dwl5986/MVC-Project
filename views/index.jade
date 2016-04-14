@@ -2,13 +2,19 @@ doctype html
 html(lang='en')
   head
     title #{title}
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+    link(rel="stylesheet", type="text/css", href="/assets/styles.css")
   body
     h1 Welcome to the #{pageName}
     // links or URLs are always GET resources as they are getting (retrieving) a resource
     a(href='/') Home  |
     a(href='/page1')   Game Page  |
-    a(href='/scorePage')   High Scores  |
+    a(href='/scorePage')   Scores  |
     a(href='/logout')   Log Out
     div.divSpacer
     h3 MVC Project Documentation
-    p This will be an explanation of this project, including its scope with my final project.
+    div.textHolder
+      p For this MVC Mini-Project, I structured my final project with the pages that would be necessary. A lot of the styles that I will be using are missing, and I also want a page for all high scores, rather than just a users high scores. This will be added for the final project.
+      p This project has a login/logout system that users can use to log in to the site, in order to save their high scores. You cannot go to any of the pages on the site without an account.
+      p There is a page for the game people will play for high scores, as well as a page for the scores themselves. This is the home page (or landing page) and has information about the project on it, for documentation. For the final project, this page will probably have the directions for the game or some information regarding how the player should use the application.
+      p The high score page currently allows you to search for your own high scores, and add a new one with a name and the score you got. Additional functionality will be the ability to see all of the users high scores, so you can see how you stack up to everyone else.

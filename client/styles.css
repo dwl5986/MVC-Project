@@ -10,3 +10,20 @@
 .show {
   visibility: visible;
 }
+
+.textHolder {
+  width: 800px;
+}
+
+.scoreHolder {
+  width: 400px;
+}
+.showHS {
+  display: inline-block;
+  width: 125px;
+  border: 1px solid black;
+}
+.showHS span {
+  display: block;
+  margin: 5px;
+}

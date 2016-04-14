@@ -15,8 +15,6 @@ var router = function(app) {
 
   // Page 1
   app.get('/page1', mid.requiresLogin, controllers.page1);
-  // Page 2
-  // app.get('/page2', mid.requiresLogin, controllers.page2);
 
   // Index
   app.get('/', mid.requiresLogin, controllers.index);
